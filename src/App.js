@@ -3,14 +3,14 @@ import Form from './components/Form';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import React, { useState } from 'react';
-import Aboutus from './components/Aboutus';
+// import Aboutus from './components/Aboutus';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Routes
-} from "react-router-dom";
+// import {
+//   BrowserRouter as Router,
+//   Route,
+//   Link,
+//   Routes
+// } from "react-router-dom";
 
 
 function App() {
@@ -49,14 +49,12 @@ if(value === "danger"){
   } 
   return (
     <> 
-    <Router>
+    
   <Navbar titleName = "Text Converter"  showAlert = {showAlert} color = {color} HandlerTargetFn = {HandlerTargetFn} /> 
   <Alert alert  = {alert}/>
-  <Routes>
-      <Route exact path="/aboutus" element={<Aboutus />} />
-      <Route exact path="/" element={<Form heading="Enter your text to convert" showAlert={showAlert} color={color} />} />
-    </Routes>
-        </Router>
+    {/* <Aboutus /> */}
+    <Form heading="Enter your text to convert" showAlert={showAlert} color={color}/>
+    
     </>
   );
 }
